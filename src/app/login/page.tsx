@@ -1,57 +1,20 @@
 import Link from 'next/link'
-import { Bookmark, Building2, FileText, Image as ImageIcon, Sparkles } from 'lucide-react'
+import { Newspaper, Sparkles } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
-import { getFactoryState } from '@/design/factory/get-factory-state'
-import { getProductKind } from '@/design/factory/get-product-kind'
 import { LOGIN_PAGE_OVERRIDE_ENABLED, LoginPageOverride } from '@/overrides/login-page'
 
-function getLoginConfig(kind: ReturnType<typeof getProductKind>) {
-  if (kind === 'directory') {
-    return {
-      shell: 'bg-[#f8fbff] text-slate-950',
-      panel: 'border border-slate-200 bg-white',
-      side: 'border border-slate-200 bg-slate-50',
-      muted: 'text-slate-600',
-      action: 'bg-slate-950 text-white hover:bg-slate-800',
-      icon: Building2,
-      title: 'Access your business dashboard',
-      body: 'Manage listings, verification details, contact info, and local discovery surfaces from one place.',
-    }
-  }
-  if (kind === 'editorial') {
-    return {
-      shell: 'bg-[#fbf6ee] text-[#241711]',
-      panel: 'border border-[#dcc8b7] bg-[#fffdfa]',
-      side: 'border border-[#e6d6c8] bg-[#fff4e8]',
-      muted: 'text-[#6e5547]',
-      action: 'bg-[#241711] text-[#fff1e2] hover:bg-[#3a241b]',
-      icon: FileText,
-      title: 'Sign in to your publication workspace',
-      body: 'Draft, review, and publish long-form work with the calmer reading system intact.',
-    }
-  }
-  if (kind === 'visual') {
-    return {
-      shell: 'bg-[#07101f] text-white',
-      panel: 'border border-white/10 bg-white/6',
-      side: 'border border-white/10 bg-white/5',
-      muted: 'text-slate-300',
-      action: 'bg-[#8df0c8] text-[#07111f] hover:bg-[#77dfb8]',
-      icon: ImageIcon,
-      title: 'Enter the creator workspace',
-      body: 'Open your visual feed, creator profile, and publishing tools without dropping into a generic admin shell.',
-    }
-  }
+function getLoginConfig() {
   return {
-    shell: 'bg-[#f7f1ea] text-[#261811]',
-    panel: 'border border-[#ddcdbd] bg-[#fffaf4]',
-    side: 'border border-[#e8dbce] bg-[#f3e8db]',
-    muted: 'text-[#71574a]',
-    action: 'bg-[#5b2b3b] text-[#fff0f5] hover:bg-[#74364b]',
-    icon: Bookmark,
-    title: 'Open your curated collections',
-    body: 'Manage saved resources, collection notes, and curator identity from a calmer workspace.',
+    shell: 'bg-[#f7f8fc] text-[#1f254b]',
+    panel: 'border border-[#b9c3e4] bg-white shadow-[0_18px_48px_rgba(54,48,98,0.12)]',
+    side: 'border border-[#818fb4]/30 bg-[linear-gradient(140deg,#363062_0%,#435585_100%)] text-white shadow-[0_24px_56px_rgba(54,48,98,0.2)]',
+    muted: 'text-[#d7def5]',
+    input: 'border border-[#c8cfe5] bg-[#f7f9ff] text-[#1f254b] placeholder:text-[#7681aa]',
+    action: 'bg-[#363062] text-[#f5e8c7] hover:bg-[#435585]',
+    icon: Newspaper,
+    title: 'Sign in to your ViroBuzz newsroom',
+    body: 'Access your media dashboard to manage press releases, monitor updates, and keep your newsroom active.',
   }
 }
 
@@ -60,9 +23,7 @@ export default function LoginPage() {
     return <LoginPageOverride />
   }
 
-  const { recipe } = getFactoryState()
-  const productKind = getProductKind(recipe)
-  const config = getLoginConfig(productKind)
+  const config = getLoginConfig()
   const Icon = config.icon
 
   return (
@@ -82,14 +43,14 @@ export default function LoginPage() {
           </div>
 
           <div className={`rounded-[2rem] p-8 ${config.panel}`}>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Welcome back</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#6a74a0]">Welcome back</p>
             <form className="mt-6 grid gap-4">
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Password" type="password" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="Email address" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="Password" type="password" />
               <button type="submit" className={`inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold ${config.action}`}>Sign in</button>
             </form>
-            <div className={`mt-6 flex items-center justify-between text-sm ${config.muted}`}>
-              <Link href="/forgot-password" className="hover:underline">Forgot password?</Link>
+            <div className="mt-6 flex items-center justify-between text-sm text-[#68739d]">
+              <Link href="/forgot-password" className="hover:text-[#363062] hover:underline">Forgot password?</Link>
               <Link href="/register" className="inline-flex items-center gap-2 font-semibold hover:underline">
                 <Sparkles className="h-4 w-4" />
                 Create account
