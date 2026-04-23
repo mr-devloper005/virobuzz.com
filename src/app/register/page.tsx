@@ -1,57 +1,20 @@
 import Link from 'next/link'
-import { Bookmark, Building2, FileText, Image as ImageIcon, Sparkles } from 'lucide-react'
+import { Newspaper, Sparkles } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
-import { getFactoryState } from '@/design/factory/get-factory-state'
-import { getProductKind } from '@/design/factory/get-product-kind'
 import { REGISTER_PAGE_OVERRIDE_ENABLED, RegisterPageOverride } from '@/overrides/register-page'
 
-function getRegisterConfig(kind: ReturnType<typeof getProductKind>) {
-  if (kind === 'directory') {
-    return {
-      shell: 'bg-[#f8fbff] text-slate-950',
-      panel: 'border border-slate-200 bg-white',
-      side: 'border border-slate-200 bg-slate-50',
-      muted: 'text-slate-600',
-      action: 'bg-slate-950 text-white hover:bg-slate-800',
-      icon: Building2,
-      title: 'Create a business-ready account',
-      body: 'List services, manage locations, and activate trust signals with a proper directory workflow.',
-    }
-  }
-  if (kind === 'editorial') {
-    return {
-      shell: 'bg-[#fbf6ee] text-[#241711]',
-      panel: 'border border-[#dcc8b7] bg-[#fffdfa]',
-      side: 'border border-[#e6d6c8] bg-[#fff4e8]',
-      muted: 'text-[#6e5547]',
-      action: 'bg-[#241711] text-[#fff1e2] hover:bg-[#3a241b]',
-      icon: FileText,
-      title: 'Start your contributor workspace',
-      body: 'Create a profile for essays, issue drafts, editorial review, and publication scheduling.',
-    }
-  }
-  if (kind === 'visual') {
-    return {
-      shell: 'bg-[#07101f] text-white',
-      panel: 'border border-white/10 bg-white/6',
-      side: 'border border-white/10 bg-white/5',
-      muted: 'text-slate-300',
-      action: 'bg-[#8df0c8] text-[#07111f] hover:bg-[#77dfb8]',
-      icon: ImageIcon,
-      title: 'Set up your creator profile',
-      body: 'Launch a visual-first account with gallery publishing, identity surfaces, and profile-led discovery.',
-    }
-  }
+function getRegisterConfig() {
   return {
-    shell: 'bg-[#f7f1ea] text-[#261811]',
-    panel: 'border border-[#ddcdbd] bg-[#fffaf4]',
-    side: 'border border-[#e8dbce] bg-[#f3e8db]',
-    muted: 'text-[#71574a]',
-    action: 'bg-[#5b2b3b] text-[#fff0f5] hover:bg-[#74364b]',
-    icon: Bookmark,
-    title: 'Create a curator account',
-    body: 'Build shelves, save references, and connect collections to your profile without a generic feed setup.',
+    shell: 'bg-[#f7f8fc] text-[#1f254b]',
+    panel: 'border border-[#b9c3e4] bg-white shadow-[0_18px_48px_rgba(54,48,98,0.12)]',
+    side: 'border border-[#818fb4]/30 bg-[linear-gradient(140deg,#363062_0%,#435585_100%)] text-white shadow-[0_24px_56px_rgba(54,48,98,0.2)]',
+    muted: 'text-[#d7def5]',
+    input: 'border border-[#c8cfe5] bg-[#f7f9ff] text-[#1f254b] placeholder:text-[#7681aa]',
+    action: 'bg-[#363062] text-[#f5e8c7] hover:bg-[#435585]',
+    icon: Newspaper,
+    title: 'Create your ViroBuzz account',
+    body: 'Start publishing press releases with a modern dashboard built for newsroom workflows and media visibility.',
   }
 }
 
@@ -60,9 +23,7 @@ export default function RegisterPage() {
     return <RegisterPageOverride />
   }
 
-  const { recipe } = getFactoryState()
-  const productKind = getProductKind(recipe)
-  const config = getRegisterConfig(productKind)
+  const config = getRegisterConfig()
   const Icon = config.icon
 
   return (
@@ -82,17 +43,17 @@ export default function RegisterPage() {
           </div>
 
           <div className={`rounded-[2rem] p-8 ${config.panel}`}>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">Create account</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#6a74a0]">Create account</p>
             <form className="mt-6 grid gap-4">
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Full name" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Email address" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="Password" type="password" />
-              <input className="h-12 rounded-xl border border-current/10 bg-transparent px-4 text-sm" placeholder="What are you creating or publishing?" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="Full name" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="Email address" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="Password" type="password" />
+              <input className={`h-12 rounded-xl px-4 text-sm outline-none ring-[#435585]/25 focus:ring-2 ${config.input}`} placeholder="What are you creating or publishing?" />
               <button type="submit" className={`inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold ${config.action}`}>Create account</button>
             </form>
-            <div className={`mt-6 flex items-center justify-between text-sm ${config.muted}`}>
+            <div className="mt-6 flex items-center justify-between text-sm text-[#68739d]">
               <span>Already have an account?</span>
-              <Link href="/login" className="inline-flex items-center gap-2 font-semibold hover:underline">
+              <Link href="/login" className="inline-flex items-center gap-2 font-semibold hover:text-[#363062] hover:underline">
                 <Sparkles className="h-4 w-4" />
                 Sign in
               </Link>

@@ -1,58 +1,27 @@
-import Link from 'next/link'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 import { fetchTaskPosts } from '@/lib/task-data'
 import type { TaskKey } from '@/lib/site-config'
+import { MediaListingClient } from '@/components/overrides/media-listing-client'
 
 export const TASK_LIST_PAGE_OVERRIDE_ENABLED = true
 
-function excerpt(text?: string | null) {
-  const value = (text || '').trim()
-  if (!value) return 'Read the full post for the complete update.'
-  return value.length > 220 ? value.slice(0, 217).trimEnd() + '...' : value
-}
-
 export async function TaskListPageOverride(_: { task: TaskKey; category?: string }) {
-  const posts = await fetchTaskPosts('mediaDistribution', 24, { fresh: true })
-  const recent = posts.slice(0, 5)
+  const posts = await fetchTaskPosts('mediaDistribution', 24, { fresh: false })
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen bg-[#f7f8fc] text-[#1f2344]">
       <NavbarShell />
-      <main className="mx-auto grid max-w-6xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_280px]">
-        <div className="space-y-14">
-          {posts.map((post) => (
-            <article key={post.id} className="border-b border-neutral-200 pb-12">
-              <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">{String((post.content as any)?.category || 'Update')}</p>
-              <h1 className="mx-auto mt-3 max-w-4xl text-center text-3xl font-black uppercase leading-tight tracking-[0.02em] sm:text-4xl">{post.title}</h1>
-              <div className="mt-4 flex items-center justify-center gap-3 text-sm text-neutral-500">
-                <span className="bg-neutral-800 px-3 py-1 text-white">{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                <span>by {post.authorName || 'Editorial Desk'}</span>
-              </div>
-              <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-neutral-700">{excerpt(post.summary)}</p>
-              <div className="mt-8 text-center">
-                <Link href={`/updates/${post.slug}`} className="inline-flex rounded-full bg-neutral-800 px-8 py-3 text-sm font-medium text-white hover:bg-black">Continue Reading</Link>
-              </div>
-            </article>
-          ))}
-        </div>
-        <aside className="space-y-6">
-          <div className="border border-neutral-200 p-6">
-            <div className="flex items-center gap-0">
-              <input className="h-12 flex-1 border border-neutral-200 px-4 text-sm outline-none" placeholder="Type here to search" />
-              <button className="flex h-12 w-12 items-center justify-center bg-neutral-800 text-white">Q</button>
-            </div>
-          </div>
-          <div className="border border-neutral-200 p-6">
-            <div className="space-y-5">
-              {recent.map((post) => (
-                <Link key={post.id} href={`/updates/${post.slug}`} className="block border-b border-neutral-200 pb-5 last:border-b-0 last:pb-0">
-                  <p className="text-base leading-7 text-neutral-700">{post.title}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </aside>
+      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
+        <section className="mb-10 rounded-3xl bg-[linear-gradient(130deg,#363062_0%,#435585_100%)] p-7 text-white shadow-[0_24px_65px_rgba(54,48,98,0.2)] sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f5e8c7]">Newsroom</p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Latest News & Press Releases</h1>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#d8def2]">
+            Browse recent media updates with category and date filters. Use the search box to quickly find releases by title, topic, or summary terms.
+          </p>
+        </section>
+
+        <MediaListingClient posts={posts} />
       </main>
       <Footer />
     </div>
