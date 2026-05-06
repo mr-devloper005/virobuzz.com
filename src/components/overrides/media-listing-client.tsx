@@ -69,7 +69,7 @@ export function MediaListingClient({ posts }: Props) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               className="h-12 w-full rounded-xl border border-[#c8cfe5] bg-[#f8f9ff] pl-10 pr-4 text-sm text-[#22284f] outline-none ring-[#435585]/30 focus:ring-2"
-              placeholder="Search press releases..."
+              placeholder="Search press media..."
             />
           </label>
           <select
@@ -108,23 +108,20 @@ export function MediaListingClient({ posts }: Props) {
                 <ContentImage src={imageFor(index)} alt={post.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
               </div>
               <div className="p-5">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
                   <span className="rounded-full bg-[#eef1fa] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#404d81]">
                     {categoryOf(post)}
                   </span>
-                  <span className="text-xs text-[#6c769c]">
-                    {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </span>
                 </div>
                 <h2 className="mt-3 line-clamp-2 text-xl font-semibold leading-snug text-[#242a52]">{post.title}</h2>
-                <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#60698f]">{post.summary || 'Read the complete press release details.'}</p>
+                <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#60698f]">{post.summary || 'Read the complete press media details.'}</p>
               </div>
             </Link>
           ))}
         </section>
       ) : (
         <div className="rounded-2xl border border-dashed border-[#818fb4]/40 bg-white p-10 text-center text-sm text-[#66729e]">
-          No press releases match your current filters.
+          No press media match your current filters.
         </div>
       )}
     </>

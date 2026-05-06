@@ -15,7 +15,6 @@ const topLinks = [
 
 const primaryLinks = [
   { label: 'Newsroom', href: '/updates' },
-  { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -44,7 +43,7 @@ export function NavbarOverride() {
           </div>
           <div>
             <p className="text-lg font-semibold leading-none text-[#f5e8c7]">{SITE_CONFIG.name}</p>
-            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#cfd4e8]">Press Release Network</p>
+            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-[#cfd4e8]">Press Media Network</p>
           </div>
         </Link>
 

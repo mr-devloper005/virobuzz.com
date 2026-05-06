@@ -24,7 +24,7 @@ export default function AboutPage() {
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
         <section className="rounded-3xl bg-[linear-gradient(130deg,#363062_0%,#435585_100%)] p-7 text-white shadow-[0_24px_64px_rgba(54,48,98,0.22)] sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f5e8c7]">About ViroBuzz</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.03em]">Built for modern media press releases</h1>
+          <h1 className="mt-3 text-4xl font-semibold tracking-[-0.03em]">Built for modern media press media</h1>
           <p className="mt-4 max-w-3xl text-sm leading-8 text-[#d6ddf3]">
             ViroBuzz.com helps organizations publish announcements and updates with a polished newsroom experience that feels modern, trustworthy, and easy to navigate.
           </p>
@@ -69,9 +69,6 @@ export default function AboutPage() {
             Whether you are launching a product, sharing company milestones, or publishing regular updates, ViroBuzz gives you a refined publishing surface tailored for media communication.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/pricing" className="rounded-full bg-[#363062] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#435585]">
-              View pricing
-            </Link>
             <Link href="/contact" className="rounded-full border border-[#b8c2e4] bg-[#f8f9ff] px-5 py-2.5 text-sm font-semibold text-[#363062] transition hover:bg-[#eef1fa]">
               Contact us
             </Link>
