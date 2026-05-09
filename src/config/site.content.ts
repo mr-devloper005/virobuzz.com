@@ -2,7 +2,7 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Press Release Intelligence',
+    tagline: 'Press Media Intelligence',
   },
   footer: {
     tagline: 'Publish smarter. Reach wider.',
@@ -20,7 +20,7 @@ export const siteContent = {
       label: 'View Pricing',
       href: '/pricing',
     },
-    searchPlaceholder: 'Search press releases',
+    searchPlaceholder: 'Search press media',
     focusLabel: 'Trending',
     featureCardBadge: 'press note',
     featureCardTitle: 'Verified updates from brands and teams.',
@@ -29,13 +29,13 @@ export const siteContent = {
   },
   home: {
     metadata: {
-      title: 'Latest press releases and newsroom updates',
+      title: 'Latest press media and newsroom updates',
       description:
-        'Discover recent press releases, company announcements, and media updates on ViroBuzz.com.',
-      openGraphTitle: 'Latest press releases and newsroom updates',
+        'Discover recent press media, company announcements, and media updates on ViroBuzz.com.',
+      openGraphTitle: 'Latest press media and newsroom updates',
       openGraphDescription:
         'A modern media publishing experience for announcements, updates, and newsroom stories.',
-      keywords: ['press release', 'newsroom', 'company announcements', 'media updates', 'virobuzz'],
+      keywords: ['press media', 'newsroom', 'company announcements', 'media updates', 'virobuzz'],
     },
     introBadge: 'About ViroBuzz',
     introTitle: 'A modern press-release destination for teams that need visibility.',
@@ -46,7 +46,7 @@ export const siteContent = {
     ],
     sideBadge: 'What you get',
     sidePoints: [
-      'Structured press release listing with filters.',
+      'Structured press media listing with filters.',
       'Clean article pages with featured media and sharing.',
       'Flexible pricing plans for distribution needs.',
       'Brand-ready publishing style with modern UI.',
@@ -62,7 +62,7 @@ export const siteContent = {
   },
   cta: {
     badge: 'Ready to publish',
-    title: 'Share your next press release with confidence.',
+    title: 'Share your next press media with confidence.',
     description:
       'Use ViroBuzz.com to publish announcements quickly and keep your newsroom discoverable across devices.',
     primaryCta: {
@@ -109,7 +109,7 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
   },
   mediaDistribution: {
     title: 'Latest news',
-    description: 'Read press releases, announcements, and media updates.',
+    description: 'Read press media, announcements, and media updates.',
   },
 }
 
@@ -130,7 +130,7 @@ export const taskIntroCopy: Record<
   mediaDistribution: {
     title: 'Latest news',
     paragraphs: [
-      'This newsroom archive is built for press release discovery with fast scanning and clear metadata.',
+      'This newsroom archive is built for press media discovery with fast scanning and clear metadata.',
       'Use category and date filters to narrow stories, then open full articles for complete details and media.',
     ],
     links: [

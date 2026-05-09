@@ -34,14 +34,12 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
       <section className="bg-[linear-gradient(130deg,#363062_0%,#435585_100%)] py-14 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f5e8c7]">
-            Press Release
+            Press Media
           </div>
           <h1 className="mt-4 max-w-5xl text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-5xl">{post.title}</h1>
           {subtitle ? <p className="mt-4 max-w-4xl text-base leading-8 text-[#d9def4]">{subtitle}</p> : null}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-[#dde3f7]">
             <span>{post.authorName || 'ViroBuzz Editorial Team'}</span>
-            <span>•</span>
-            <span>{new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span>•</span>
             <Link href="/">Home</Link>
             <span>/</span>
@@ -61,7 +59,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
             <span className="rounded-full bg-[#eef1fa] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#394577]">
               {String((content.category as string) || 'General')}
             </span>
-            <span>Published {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
           </div>
 
           <div className="prose prose-lg max-w-none text-[#2f345d] prose-headings:text-[#1f2344] prose-p:leading-8">
@@ -102,9 +99,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
                     <ContentImage src={imageFor(index + 1)} alt={item.title} fill className="object-cover" />
                   </div>
                   <div className="p-4">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-[#6d78a2]">
-                      {new Date(item.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                    </p>
                     <p className="mt-2 line-clamp-2 text-base font-semibold text-[#232952]">{item.title}</p>
                   </div>
                 </Link>

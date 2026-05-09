@@ -16,7 +16,7 @@ export function ContactPageOverride() {
           </p>
         </section>
 
-        <section className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <section className="mt-8">
           <form className="rounded-3xl border border-[#818fb4]/30 bg-white p-6 shadow-[0_16px_44px_rgba(54,48,98,0.1)] sm:p-8">
             <h2 className="text-2xl font-semibold text-[#242a51]">Send us a message</h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -42,27 +42,6 @@ export function ContactPageOverride() {
               Submit Now
             </button>
           </form>
-
-          <div className="space-y-4">
-            <div className="rounded-2xl border border-[#818fb4]/30 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66739f]">Telephone hours</p>
-              <p className="mt-3 text-sm text-[#404a77]">Monday to Friday</p>
-              <p className="text-sm text-[#404a77]">8:30am to 5:00pm (PDT)</p>
-            </div>
-            <div className="rounded-2xl border border-[#818fb4]/30 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66739f]">Toll free telephone</p>
-              <p className="mt-3 text-xl font-semibold text-[#252c53]">1-888-880-9539</p>
-              <p className="mt-1 text-sm text-[#5f6994]">(646) 417-8294</p>
-            </div>
-            <div className="rounded-2xl border border-[#818fb4]/30 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66739f]">US Address</p>
-              <p className="mt-3 text-sm leading-7 text-[#404a77]">Suite 1400, 506 2nd Avenue<br />Seattle, WA 98104, USA</p>
-            </div>
-            <div className="rounded-2xl border border-[#818fb4]/30 bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66739f]">Canada Address</p>
-              <p className="mt-3 text-sm leading-7 text-[#404a77]">Suite 203, 901 West 3rd St<br />North Vancouver, BC V7P 3P9, Canada</p>
-            </div>
-          </div>
         </section>
       </main>
       <Footer />
