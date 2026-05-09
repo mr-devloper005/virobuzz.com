@@ -9,7 +9,7 @@ export const HOME_PAGE_OVERRIDE_ENABLED = true
 
 function excerpt(text?: string | null) {
   const value = (text || '').trim()
-  if (!value) return 'Read the full press release for complete details.'
+  if (!value) return 'Read the full press media for complete details.'
   return value.length > 140 ? value.slice(0, 137).trimEnd() + '...' : value
 }
 
@@ -78,15 +78,12 @@ export async function HomePageOverride() {
                   The News Starts Here
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-[#d4dbf2]">
-                  Publish press releases, product updates, and company announcements through a clean, modern newsroom experience built for trust and clarity.
+                  Publish press media, product updates, and company announcements through a clean, modern newsroom experience built for trust and clarity.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link href="/updates" className="inline-flex items-center gap-2 rounded-full bg-[#f5e8c7] px-5 py-3 text-sm font-semibold text-[#363062] transition hover:bg-white">
                     Explore Latest News
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link href="/pricing" className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">
-                    View Pricing
                   </Link>
                 </div>
               </div>
@@ -97,9 +94,6 @@ export async function HomePageOverride() {
                     href={`/updates/${post.slug}`}
                     className={`${index === 0 ? 'sm:col-span-2' : ''} rounded-2xl border border-white/15 bg-white/10 p-5 transition hover:-translate-y-1 hover:bg-white/15`}
                   >
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-[#f5e8c7]">
-                      {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                    </p>
                     <h2 className="mt-2 line-clamp-2 text-xl font-semibold leading-snug">{post.title}</h2>
                     <p className="mt-3 text-sm leading-7 text-[#d7def5]">{excerpt(post.summary)}</p>
                   </Link>
@@ -127,8 +121,6 @@ export async function HomePageOverride() {
                 <h3 className="mt-3 text-2xl font-semibold leading-snug text-[#202447]">{featured.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-[#5f678f]">{excerpt(featured.summary)}</p>
                 <div className="mt-5 flex flex-wrap items-center gap-3 text-xs text-[#6d77a1]">
-                  <span>{new Date(featured.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                  <span>•</span>
                   <span>{featured.authorName || 'ViroBuzz Editorial Team'}</span>
                 </div>
                 <div className="mt-auto pt-6">
@@ -175,9 +167,6 @@ export async function HomePageOverride() {
                   <ContentImage src={heroImageFor(index + 1)} alt={post.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[#6d77a1]">
-                    {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </p>
                   <h3 className="mt-2 line-clamp-2 text-xl font-semibold text-[#202447]">{post.title}</h3>
                   <p className="mt-3 line-clamp-3 text-sm leading-7 text-[#5f678f]">{excerpt(post.summary)}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#363062]">
@@ -238,7 +227,7 @@ export async function HomePageOverride() {
         <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
           <div className="rounded-3xl border border-[#818fb4]/30 bg-white p-8 text-center shadow-[0_18px_46px_rgba(54,48,98,0.1)]">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#6c769c]">Call to action</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-[#2b2f57]">Ready to publish your next press release?</h2>
+            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-[#2b2f57]">Ready to publish your next press media?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-[#616b95]">
               Launch your newsroom presence with a polished media-ready layout designed for clarity, trust, and discoverability.
             </p>

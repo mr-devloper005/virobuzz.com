@@ -14,7 +14,7 @@ function getLoginConfig() {
     action: 'bg-[#363062] text-[#f5e8c7] hover:bg-[#435585]',
     icon: Newspaper,
     title: 'Sign in to your ViroBuzz newsroom',
-    body: 'Access your media dashboard to manage press releases, monitor updates, and keep your newsroom active.',
+    body: 'Access your media dashboard to manage press media, monitor updates, and keep your newsroom active.',
   }
 }
 

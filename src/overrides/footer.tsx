@@ -19,7 +19,6 @@ export function FooterOverride() {
             <div className="mt-4 grid gap-3 text-sm">
               <Link href="/">Home</Link>
               <Link href="/updates">Latest News</Link>
-              <Link href="/pricing">Pricing</Link>
               <Link href="/contact">Contact</Link>
             </div>
           </div>
@@ -27,8 +26,6 @@ export function FooterOverride() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9ca8ce]">Company</p>
             <div className="mt-4 grid gap-3 text-sm">
               <Link href="/about">About</Link>
-              <Link href="/careers">Careers</Link>
-              <Link href="/press">Press</Link>
               <Link href="/help">Help</Link>
             </div>
           </div>

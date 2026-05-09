@@ -1,10 +1,10 @@
 export const siteIdentity = {
   code: process.env.NEXT_PUBLIC_SITE_CODE || 'dtljlsuu6p',
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'ViroBuzz.com',
-  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Media Press Release Network',
+  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Media Press Media Network',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    'ViroBuzz.com is a media press release platform for publishing company announcements, newsroom updates, and discoverable industry stories.',
+    'ViroBuzz.com is a media press media platform for publishing company announcements, newsroom updates, and discoverable industry stories.',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || 'virobuzz.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://virobuzz.com',
   ogImage: process.env.NEXT_PUBLIC_SITE_OG_IMAGE || '/og-default.png',

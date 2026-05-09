@@ -14,7 +14,7 @@ function getRegisterConfig() {
     action: 'bg-[#363062] text-[#f5e8c7] hover:bg-[#435585]',
     icon: Newspaper,
     title: 'Create your ViroBuzz account',
-    body: 'Start publishing press releases with a modern dashboard built for newsroom workflows and media visibility.',
+    body: 'Start publishing press media with a modern dashboard built for newsroom workflows and media visibility.',
   }
 }
 

@@ -15,7 +15,7 @@ export async function TaskListPageOverride(_: { task: TaskKey; category?: string
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
         <section className="mb-10 rounded-3xl bg-[linear-gradient(130deg,#363062_0%,#435585_100%)] p-7 text-white shadow-[0_24px_65px_rgba(54,48,98,0.2)] sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f5e8c7]">Newsroom</p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Latest News & Press Releases</h1>
+          <h1 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">Latest News & Press Media</h1>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-[#d8def2]">
             Browse recent media updates with category and date filters. Use the search box to quickly find releases by title, topic, or summary terms.
           </p>
