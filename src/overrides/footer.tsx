@@ -4,6 +4,7 @@ import { SITE_CONFIG } from '@/lib/site-config'
 export const FOOTER_OVERRIDE_ENABLED = true
 
 export function FooterOverride() {
+
   return (
     <footer className="mt-16 border-t border-white/10 bg-[#1f1a42] text-[#d7ddef]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
@@ -38,6 +39,7 @@ export function FooterOverride() {
             </div>
           </div>
         </div>
+
         <div className="mt-10 border-t border-white/10 pt-5 text-sm text-[#aab4d7]">
           &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
         </div>
